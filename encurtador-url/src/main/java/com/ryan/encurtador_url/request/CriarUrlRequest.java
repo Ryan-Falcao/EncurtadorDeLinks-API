@@ -11,5 +11,5 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CriarUrlRequest {
 
-    private String UrlOriginal;
+    private String urlOriginal;
 }
