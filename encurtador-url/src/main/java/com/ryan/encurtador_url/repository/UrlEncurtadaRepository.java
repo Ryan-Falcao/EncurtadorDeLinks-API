@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface UrlEncurtadaRepository extends JpaRepository<UrlEncurtada, Long> {
 
-    Optional<UrlEncurtada> findByCodigoCurto(String codigoCurto);
+    Optional<UrlEncurtada> findByUrlEncurtada(String urlEncurtada);
 
     Optional<UrlEncurtada> findByUrlOriginal(String urlOriginal);
 }

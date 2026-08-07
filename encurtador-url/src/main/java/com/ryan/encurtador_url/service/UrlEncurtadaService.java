@@ -34,7 +34,7 @@ public class UrlEncurtadaService {
         return UUID.randomUUID().toString().substring(0, 6);
     }
     public UrlEncurtada buscarPorCodigo(String codigo) {
-        return urlEncurtadaRepository.findByCodigoCurto(codigo)
+        return urlEncurtadaRepository.findByUrlEncurtada(codigo)
                 .orElseThrow(() -> new RuntimeException("URL não encontrada"));
     }
 
