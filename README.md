@@ -1,8 +1,8 @@
-# Linkly
+# CurtaLink
 
 > Links menores. Ideias maiores.
 
-O **Linkly** é um encurtador de URLs criado para transformar links longos em endereços curtos, limpos e fáceis de compartilhar. O projeto foi pensado como uma experiência completa: interface pública, API, persistência de dados, painel de uso e publicação em nuvem.
+O **CurtaLink** é um encurtador de URLs criado para transformar links longos em endereços curtos, limpos e fáceis de compartilhar. O projeto foi pensado como uma experiência completa: interface pública, API, persistência de dados, painel de uso e publicação em nuvem.
 
 ## O que foi construído
 
@@ -59,8 +59,8 @@ Projeto em evolução, com API e banco publicados em nuvem e frontend preparado 
 
 **Ryan Marques Monteiro Falcao**
 
-Contato: [linkly.contato@gmail.com](mailto:linkly.contato@gmail.com)
+Contato: [linkly.contato@gmail.com](mailto:linkly.contato@gmail.com) (endereço em transição de marca)
 
 ---
 
-Este é um projeto pessoal. O código e a identidade do Linkly não são disponibilizados como um template de código aberto.
+Este é um projeto pessoal. O código e a identidade do CurtaLink não são disponibilizados como um template de código aberto.

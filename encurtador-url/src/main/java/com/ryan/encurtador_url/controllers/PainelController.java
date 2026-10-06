@@ -39,7 +39,7 @@ public class PainelController {
 
         if (!autorizado(authorization)) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                    .header(HttpHeaders.WWW_AUTHENTICATE, "Basic realm=\"Linkly\"")
+                    .header(HttpHeaders.WWW_AUTHENTICATE, "Basic realm=\"CurtaLink\"")
                     .body(new ErroPainel("Senha inválida."));
         }
 
