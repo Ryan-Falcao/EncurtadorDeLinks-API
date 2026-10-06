@@ -58,7 +58,37 @@ GET /{codigo}
 
 Redireciona automaticamente (302) para a URL original e incrementa o contador de cliques.
 
-## ⚙️ Como rodar localmente
+## 🐳 Rodar localmente com Docker
+
+O Docker inicia a API e um MySQL local automaticamente. Não é necessário instalar MySQL no computador.
+
+```powershell
+docker compose up --build
+```
+
+A interface estará em `http://localhost:8081`. Os dados do banco ficam no volume Docker `mysql-data`.
+
+## 🚀 Deploy com Docker e Aiven MySQL
+
+O contêiner executa somente a API. O banco fica no Aiven, onde as credenciais são fornecidas em variáveis de ambiente e não ficam registradas no código.
+
+1. Crie um serviço **MySQL Free** no [Aiven](https://aiven.io/free-mysql-database) e obtenha a URL, usuário e senha de conexão.
+2. Na pasta `EncurtadorDeLinks-API`, crie seu arquivo local de variáveis:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+3. Edite o `.env` com os dados do Aiven. Preserve `useSSL=true` e `requireSSL=true` na URL.
+4. Construa e suba a API usando a configuração do Aiven:
+
+```powershell
+docker compose -f compose.aiven.yaml up --build
+```
+
+A interface e API estarão disponíveis em `http://localhost:8081`. Para encerrar, use `docker compose down`.
+
+## ⚙️ Como rodar localmente sem Docker
 
 ### Pré-requisitos
 - Java 21+

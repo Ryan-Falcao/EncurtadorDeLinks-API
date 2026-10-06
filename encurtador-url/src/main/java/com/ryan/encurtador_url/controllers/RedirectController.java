@@ -16,7 +16,7 @@ public class RedirectController {
 
     @Autowired private UrlEncurtadaService urlEncurtadaService;
 
-    @GetMapping("/{codigo}")
+    @GetMapping("/{codigo:[a-f0-9]{6}}")
     public ResponseEntity<Void> redirecionar(@PathVariable String codigo){
         UrlEncurtada url = urlEncurtadaService.buscarPorCodigo(codigo);
         urlEncurtadaService.incrementarCliques(url);

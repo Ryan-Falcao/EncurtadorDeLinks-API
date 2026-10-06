@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Painel de uso do Linkly." />
+    <title>linkly — Painel</title>
+    <link rel="icon" href="logo.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell panel-shell">
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="brand" href="/" aria-label="Linkly — início"><img class="brand-mark" src="logo.svg" alt="" />linkly</a>
+        <a class="panel-link" href="/">Voltar ao início</a>
+      </nav>
+
+      <section class="panel-intro">
+        <div class="eyebrow"><span></span> área administrativa</div>
+        <h1>Painel de<br /><em>uso.</em></h1>
+        <p>Veja os links criados e os cliques registrados pelo seu encurtador.</p>
+      </section>
+
+      <section id="login-card" class="panel-login" aria-labelledby="login-title">
+        <h2 id="login-title">Acessar painel</h2>
+        <p>Use a senha configurada nas variáveis do servidor.</p>
+        <form id="login-form">
+          <label for="admin-password">Senha do painel</label>
+          <div class="panel-login-row"><input id="admin-password" type="password" autocomplete="current-password" required /><button type="submit">Entrar</button></div>
+          <p id="login-message" class="form-message" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section id="dashboard" hidden aria-live="polite">
+        <div class="dashboard-head"><h2>Visão geral</h2><button id="logout" class="quiet-button" type="button">Sair</button></div>
+        <div class="metrics-grid">
+          <article><span>Links criados</span><strong id="links-count">—</strong><small>em todo o site</small></article>
+          <article><span>Cliques totais</span><strong id="clicks-count">—</strong><small>em todo o site</small></article>
+        </div>
+        <section class="links-table-wrap" aria-labelledby="links-title">
+          <div class="table-heading"><h2 id="links-title">Links recentes</h2><button id="refresh" class="quiet-button" type="button">Atualizar</button></div>
+          <div class="links-table-scroll"><table><thead><tr><th>Link curto</th><th>Destino</th><th>Criado em</th><th>Cliques</th></tr></thead><tbody id="links-list"></tbody></table></div>
+          <p id="empty-links" class="empty-links" hidden>Nenhum link criado ainda.</p>
+        </section>
+      </section>
+      <footer><span>© <span id="year"></span> linkly</span><span class="footer-links"><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos</a><a href="contato.html">Contato</a></span></footer>
+    </main>
+    <script src="painel.js"></script>
+  </body>
+</html>

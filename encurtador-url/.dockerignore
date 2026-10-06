@@ -1,0 +1,8 @@
+target
+.mvn
+.maven-cache
+.git
+.gitignore
+application.properties
+Dockerfile
+README.md
