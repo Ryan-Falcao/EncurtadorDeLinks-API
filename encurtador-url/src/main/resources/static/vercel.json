@@ -3,11 +3,11 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://SEU-SERVICO-RENDER.onrender.com/api/:path*"
+      "destination": "https://linkly-api-nsl2.onrender.com/api/:path*"
     },
     {
       "source": "/:codigo([a-f0-9]{6})",
-      "destination": "https://SEU-SERVICO-RENDER.onrender.com/:codigo"
+      "destination": "https://linkly-api-nsl2.onrender.com/:codigo"
     }
   ]
 }
