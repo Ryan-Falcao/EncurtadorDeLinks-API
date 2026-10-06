@@ -1,5 +1,5 @@
-spring.datasource.url=jdbc:mysql://localhost:3306/encurtador
-spring.datasource.username=root
+spring.datasource.url=jdbc:postgresql://localhost:5432/encurtador
+spring.datasource.username=encurtador
 spring.datasource.password=SUA_SENHA_AQUI
 
 spring.jpa.hibernate.ddl-auto=update

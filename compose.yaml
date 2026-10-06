@@ -1,19 +1,18 @@
 services:
   db:
-    image: mysql:8.4
+    image: postgres:16-alpine
     environment:
-      MYSQL_DATABASE: encurtador
-      MYSQL_USER: encurtador
-      MYSQL_PASSWORD: encurtador_local
-      MYSQL_ROOT_PASSWORD: root_local
+      POSTGRES_DB: encurtador
+      POSTGRES_USER: encurtador
+      POSTGRES_PASSWORD: encurtador_local
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot_local"]
+      test: ["CMD-SHELL", "pg_isready -U encurtador -d encurtador"]
       interval: 5s
       timeout: 5s
       retries: 20
       start_period: 15s
     volumes:
-      - mysql-data:/var/lib/mysql
+      - postgres-data:/var/lib/postgresql/data
 
   api:
     build:
@@ -21,7 +20,7 @@ services:
     ports:
       - "8081:8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/encurtador?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/encurtador
       SPRING_DATASOURCE_USERNAME: encurtador
       SPRING_DATASOURCE_PASSWORD: encurtador_local
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
@@ -33,4 +32,4 @@ services:
     restart: unless-stopped
 
 volumes:
-  mysql-data:
+  postgres-data:

@@ -1,8 +1,8 @@
 # 🔗 Encurtador de URL
 
-API REST desenvolvida em Java com Spring Boot para encurtar URLs, com persistência em MySQL e contagem de cliques.
+API REST desenvolvida em Java com Spring Boot para encurtar URLs, com persistência em PostgreSQL e contagem de cliques.
 
-Projeto criado como estudo prático de construção de APIs REST com Spring Boot, JPA/Hibernate e MySQL.
+Projeto criado como estudo prático de construção de APIs REST com Spring Boot, JPA/Hibernate e PostgreSQL.
 
 ##  Funcionalidades
 
@@ -16,7 +16,7 @@ Projeto criado como estudo prático de construção de APIs REST com Spring Boot
 - Java 21+
 - Spring Boot 4
 - Spring Data JPA / Hibernate
-- MySQL
+- PostgreSQL
 - Lombok
 - Maven
 
@@ -60,13 +60,13 @@ Redireciona automaticamente (302) para a URL original e incrementa o contador de
 
 ## 🐳 Rodar localmente com Docker
 
-O Docker inicia a API e um MySQL local automaticamente. Não é necessário instalar MySQL no computador.
+O Docker inicia a API e um PostgreSQL local automaticamente. Não é necessário instalar PostgreSQL no computador.
 
 ```powershell
 docker compose up --build
 ```
 
-A interface estará em `http://localhost:8081`. Os dados do banco ficam no volume Docker `mysql-data`.
+A interface estará em `http://localhost:8081`. Os dados do banco ficam no volume Docker `postgres-data`.
 
 ## 🚀 Deploy com Docker e Aiven MySQL
 
